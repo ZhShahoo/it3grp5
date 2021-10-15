@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+<!-- Herunder angives der hvilken stylesheets der skal bruges.
+Den nedenstående  er css-filen, som er lavet til selve Resultater-siden. -->
+<link rel="stylesheet"type="text/css" href="CSS/Resultater.css">
+
+<!-- Nedenunder angives stylesheet der skal bruges til at lave bla. menu-baren, som skal være på alle sider -->
+<link rel="stylesheet" href="CSS/Home.css">
+
+
+    <div class="main">
+
+        <!-- Den nedenstående div, bruges til menu-baren og indeholder derfor en række elementer: -->
+        <div class="logo">
+            <img src="Bilag/output-onlinepngtools.png">
+
+            <!-- Menu-barens indhold, i form af en unordered list -->
+            <!-- List items er de forskellige sider, som er forbundet via. et href link. -->
+
+            <div class="menu-bar">
+                <ul>
+                    <b>
+                        <li><a href="../HTML/aftaler.html">🗓 Aftaler</a>
+                        </li>
+                    </b>
+                    <b>
+                        <li><a href="#"> 📝Journal </a>
+                            <div class="sub-menu-1">
+                                <ul>
+                                    <li><a href="Konsultationer.html">📋Konsultationer</a></li>
+                                    <li><a href="../HTML/Resultater.html">📩Resultater</a></li>
+                                </ul>
+                            </div>
+
+                        </li>
+                    </b>
+
+                    <li><a href="kontakt.html"><strong>📧Kontakt</strong></a>
+
+                    </li>
+
+                    <li><a href="index.html"><strong> 🔐 Log Ud</strong></a>
+
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Her begynder selve Resultat- siden, hvor man ville kunne vælge dato samt resultat.   -->
+
+    <title> Lab Resultater</title>
+
+</head>
+
+
+<body>
+
+<pre>
+</pre>
+
+<h1>Prøve Resultater </h1>
+
+<div style="margin-top:50px;">
+
+</div>
+
+<!-- 2 labels, som et eksemple, hvis man vil vise resultat i et bestemt periode, så ville man kunne vælge dato fra og til   -->
+    <p>
+        <label for="start">Dato fra:</label>
+
+        <input type="date" id="start" name="trip-start"
+               value="2018-07-22"
+               min="2018-01-01" max="2023-12-31">
+
+
+        <label for="start">Dato til:</label>
+
+        <input type="date" id="start" name="trip-start"
+               value="2018-07-22"
+               min="2018-01-01" max="2023-12-31">
+    </p>
+
+<!-- et eksempel for at vise resultatet i boksen efter man har valgt de relevante datoer samt undersøgelse  -->
+    <form action="//www.html.am/html-codes/forms/html-form-tag-action.cfm" target="result" method="get">
+
+        <div style="margin-top:50px;"> </div>
+
+<!-- Nedenstående <option> kan repræsentere menupunkter med de relevante undersøgelse -->
+        <p>Vælg Resultat</p>
+        <select name="Resultater"> <option value ="vælg"></option>
+            <option value ="Blodprøver">Blodprøver</option>
+            <option value ="EKG">EKG</option>
+            <option value ="Urinprøver">Urinprøver</option>
+
+        </select>
+        <p><input type="submit" value="Submit"></p>
+
+    </form>
+    <h3>Resultat:</h3>
+    <iframe
+            name="result" style="height:500px;width:1000px;">
+    </iframe>
+
+
+<!-- Herunder kan de valgte undersøgelser/sider printes -->
+
+</div>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style type="text/css">
+        .fa_custom {
+            color: #0099CC
+        }
+    </style>
+
+    <div style="margin-top:50px;"> </div>
+
+<i class="fa fa-print fa_custom"></i> <a href="#" onclick="window.print();return false;">Print</a>
+
+</body>
+</html>
