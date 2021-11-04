@@ -4,7 +4,6 @@
     <title>Login</title>
     <!-- Fobindelsen til CSS filen vha. html funktione "href"-->
     <link rel="stylesheet" type="text/css" href="CSS/Login.css">
-    <script defer src="Script.js" ></script>
 
 <body>
 
@@ -20,21 +19,21 @@
             <form id="form">
                 <p>Username</p>
                 <!-- Pladsholder for username -->
-                <input type="text" id="InputBrugernavn" name="" placeholder="Enter Username">
+                <input type="text" id="InputBrugernavn" autocomplete="on">
                 <p>Password</p>
                 <!-- Pladsholder for password-->
-                <input type="password" id="InputKode" name="" placeholder="Enter Password" ><br>
+                <input type="password" id="InputKode" autocomplete="on">
                 <div class="menu-bar">
                 </div>
             </form>
             <!-- Forbindelsen til hovedsiden med menu-bar "Home" efter at trykke på login knappen-->
-            <a href="Home.html"> <input  onclick="Login();" type="submit" name="" value="Login"><br></a>
-            <a href="#">Reset your Password</a><br>
+            <input  onclick="LoginValidation()" type="button" name="" value="Login">
+            <a href="#">Reset your Password</a>
             <a href="#">Register </a>
         </div>
     </div>
     </div>
 </body>
-
+<script src="Script.js" ></script>
 </head>
 </html>
