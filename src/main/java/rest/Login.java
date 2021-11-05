@@ -25,7 +25,7 @@ public class Login {
             System.out.println("Kodeord: "+kode);
             return Login_Cookie;
         } else {
-            throw new WebApplicationException("FYFY",Response.Status.FORBIDDEN);
+            throw new WebApplicationException("Fejl",Response.Status.FORBIDDEN);
         }
     }
 }
