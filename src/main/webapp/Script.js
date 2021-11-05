@@ -6,7 +6,7 @@ function LoginValidation() {
         InputKode: kode, InputBrugernavn: navn}
     )).then(resp => {
         if (resp.status!==200){
-            alert("AHHH" + resp.status)
+            alert("Ugyldigt Log-In\nFejlkode: " + resp.status)
         } else {
             resp.text().then(data =>
                 Validering(data))
