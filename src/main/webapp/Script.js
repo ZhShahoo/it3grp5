@@ -4,9 +4,17 @@ function LoginValidation() {
 
     fetch("http://localhost:8080/it3grp5_war/rest/Login?" + new URLSearchParams({
         InputKode: kode, InputBrugernavn: navn}
-    )).then(resp => resp.text().then(data => validering(data)));
+    )).then(resp => {
+        if (resp.status!==200){
+            alert("AHHH" + resp.status)
+        } else {
+            resp.text().then(data =>
+                Validering(data))
+        }
+});
 }
 
-function validering(x) {
+function Validering(x) {
     console.log(x);
+  window.location.replace("Home.html")
 }

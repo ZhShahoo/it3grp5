@@ -1,29 +1,32 @@
 package rest;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
+import javax.ws.rs.core.Response;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import static java.awt.SystemColor.window;
 
 @Path("Login")
 @Produces({MediaType.TEXT_PLAIN})
 public class Login {
-    String Brugernavn = null;
-    String Kodeord = null;
-    @GET
-    public void LoginValidering(@QueryParam("InputBrugernavn") String user, @QueryParam("InputKode") String kode){
-        Brugernavn = user;
-        Kodeord = kode;
-        LoginChecker();
-    }
-    public void LoginChecker(){
-        if(Brugernavn != null && Kodeord != null) {
-            System.out.println("B, " + Brugernavn + ".");
-            System.out.println("K, " + Kodeord + ".");
 
-        }
-        else{
+    @GET
+    public Response LoginValidering(@QueryParam("InputBrugernavn") String user, @QueryParam("InputKode") String kode) throws URISyntaxException {
+        if (user.length() != 0 && kode.length() != 0){
+            Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user",user)).build();
+            System.out.println("Brugernavn: "+user);
+            System.out.println("Kodeord: "+kode);
+            return Login_Cookie;
+        } else {
+            throw new WebApplicationException("FYFY",Response.Status.FORBIDDEN);
         }
     }
 }
+
