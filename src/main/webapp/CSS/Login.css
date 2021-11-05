@@ -56,7 +56,7 @@ h1{
     outline: none;
     height: 40px;
 }
-.loginbox input[type="submit"]{
+#LoginButton{
     border: none;
     outline: none;
     height: 40px;

@@ -1,5 +1,3 @@
-
-
 function LoginValidation() {
     let navn = document.getElementById("InputBrugernavn").value;
     let kode = document.getElementById("InputKode").value;
