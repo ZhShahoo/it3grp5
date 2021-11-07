@@ -7,6 +7,21 @@ h1{
     font-weight: bolder;
 }
 
+#Opdater{
+    height: 35px;
+    width: 60px;
+    background: whitesmoke;
+    border-radius: 5px;
+    color: black;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#OpdaterHolder{
+    text-align: left;
+    margin-left: 35px;
+}
+
 table{
     width: 95%;
     margin-left: auto;
