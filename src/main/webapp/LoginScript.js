@@ -18,3 +18,4 @@ function Validering(x) {
     console.log(x);
   window.location.replace("Home.html")
 }
+
