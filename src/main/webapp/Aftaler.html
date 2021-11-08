@@ -68,23 +68,45 @@
     <div class="left-half">
 
 <div>
+    <form id="Aftale-oprettelse">
+    <p>Sundhedspersonale (Dig): </p>
+    <p id="Bruger">---</p>
 
-    <h1>Sundhedspersonale (Dig) </h1>
-    <p id="Bruger"></p>
+    <p>&nbsp;</p>
 
     <p>Dato: </p>
     <input type="date" id="dato"
-           min="2018-01-01" max="2023-12-31">
+           min="2018-01-01" max="2023-12-31" required>
+
+    <p>&nbsp;</p>
 
     <p>Fra kl: </p>
-    <input type="time" name="tid_fra">
+    <input type="time" id="tid_fra" required>
+
+    <p>&nbsp;</p>
 
     <p>Til kl: </p>
-    <input type="time" name="tid_til">
+    <input type="time" id="tid_til" required>
+
+    <p>&nbsp;</p>
 
     <p>Patient CPR: </p>
-    <input type="text">
+    <input type="text" id="CPR" required>
 
+    <p>&nbsp;</p>
+
+    <input type="button" value="Tilføj aftale" onclick="AftaleOprettelse">
+
+        <p>&nbsp;</p>
+        <p id="1">--</p>
+        <p>&nbsp;</p>
+        <p id="2">--</p>
+        <p>&nbsp;</p>
+        <p id="3">--</p>
+        <p>&nbsp;</p>
+        <p id="4">--</p>
+
+        </form>
 </div>
     </div>
 
