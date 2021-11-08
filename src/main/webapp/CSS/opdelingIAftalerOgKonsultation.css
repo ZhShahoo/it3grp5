@@ -49,20 +49,15 @@ h1 {
 .left-half {
     background-color: #90D7FF;
     position: absolute;
-    left: 0px;
+    left: -200px;
     width: 50%;
 }
 
 .right-half {
     background-color: #90D7FF;
     position: absolute;
-    right: 0px;
-    width: 50%;
-}
-
-#OpdaterHolder{
-    text-align: right;
-    margin-right: 40px;
+    right: 10px;
+    width: 80%;
 }
 
 
