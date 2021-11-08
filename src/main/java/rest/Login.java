@@ -19,7 +19,7 @@ public class Login {
 
     @GET
     public Response LoginValidering(@QueryParam("InputBrugernavn") String user, @QueryParam("InputKode") String kode) throws URISyntaxException {
-        if (user.length() != 0 && kode.length() != 0){
+        if (user.matches("[a-zA-Z]+"+"[1-9]+") && 1 <= kode.length()){
             Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user",user)).build();
             System.out.println("Brugernavn: "+user);
             System.out.println("Kodeord: "+kode);
