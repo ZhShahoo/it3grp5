@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="CSS/Aftaler.css">
+<link rel="stylesheet" href="CSS/Home.css">
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet"type="text/css" href="CSS/Konsultationer.css">
+    <link rel="stylesheet"type="text/css" href="CSS/Home.css">
+    <link rel="stylesheet" type="text/css" href="CSS/opdelingIAftalerOgKonsultation.css">
+    <meta charset="UTF-8">
+    <title>Home</title> <!-- The title-->
+</head>
+<body>
+<div class="main">
+
+    <div class="logo">
+        <img src="Bilag/output-onlinepngtools.png">
+
+        <div class="menu-bar">
+            <ul>
+
+                <b>
+                    <li><a href="Aftaler.html">Aftaler</a>
+
+                    </li>
+                </b>
+                <b>
+                    <li><a href="Resultater.html">Resultater</a>
+
+                    </li>
+                </b>
+
+
+                <li><a href="Kontakt.html"><strong>Kontakt</strong></a>
+
+                </li>
+
+                <li><a href="index.html"><strong>Logud</strong></a>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+</div>  <!-- Menu-bar -->
+
+
+<section class="container">
+    <div class="left-half">
+
+<div>
+    <form id="Aftale-oprettelse">
+    <p>Bruger ID: <p id="Bruger">---</p></p>
+
+        <p>&nbsp;</p>
+
+        <p>Sundhedspersonale</p>
+        <input type="text" id="SP" required>
+
+    <p>&nbsp;</p>
+
+    <p>Dato</p>
+    <input type="date" id="dato"
+           min="2018-01-01" max="2023-12-31" required>
+
+    <p>&nbsp;</p>
+
+    <p>Starttid</p>
+    <input type="time" id="tid_fra" required>
+
+    <p>&nbsp;</p>
+
+    <p>Sluttid</p>
+    <input type="time" id="tid_til" required>
+
+    <p>&nbsp;</p>
+
+    <p>Patient (CPR)</p>
+    <input type="text" id="CPR" required>
+
+    <p>&nbsp;</p>
+
+    <input type="button" value="Tilføj aftale" onclick="AftaleOprettelse()">
+        <input type="button" value="Clear" onclick="Clear()">
+
+
+    </form>
+</div>
+    </div>
+
+<div class="right-half">
+    <!-- Nu begynder selve konsultationssiden, som består af en overskift og en tabel. -->
+    <div>
+        <form>
+            <!-- Tabel med 5 parameter: -->
+            <table>
+                <tr>
+                    <th>Dato</th>
+                    <th>Starttid</th>
+                    <th>Sluttid</th>
+                    <th>Patient (CPR)</th>
+                    <th>Sundhedspersonale</th>
+                    <th>Notat</th>
+                </tr>
+                <!-- Resten er et eksempel på hvad tabellen kunne indeholder (inkl. en pdf som notat): -->
+                <tr>
+                    <td id="Dato1"> </td>
+                    <td id="Starttid1"> </td>
+                    <td id="Sluttid1"> </td>
+                    <td id="CPR1"> </td>
+                    <td id="SP1"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato2"> </td>
+                    <td id="Starttid2"> </td>
+                    <td id="Sluttid2"> </td>
+                    <td id="CPR2"> </td>
+                    <td id="SP2"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato3"> </td>
+                    <td id="Starttid3"> </td>
+                    <td id="Sluttid3"> </td>
+                    <td id="CPR3"> </td>
+                    <td id="SP3"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato4"> </td>
+                    <td id="Starttid4"> </td>
+                    <td id="Sluttid4"> </td>
+                    <td id="CPR4"> </td>
+                    <td id="SP4"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato5"> </td>
+                    <td id="Starttid5"> </td>
+                    <td id="Sluttid5"> </td>
+                    <td id="CPR5"> </td>
+                    <td id="SP5"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato6"> </td>
+                    <td id="Starttid6"> </td>
+                    <td id="Sluttid6"> </td>
+                    <td id="CPR6"> </td>
+                    <td id="SP6"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato7"> </td>
+                    <td id="Starttid7"> </td>
+                    <td id="Sluttid7"> </td>
+                    <td id="CPR7"> </td>
+                    <td id="SP7"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato8"> </td>
+                    <td id="Starttid8"> </td>
+                    <td id="Sluttid8"> </td>
+                    <td id="CPR8"> </td>
+                    <td id="SP8"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato9"> </td>
+                    <td id="Starttid9"> </td>
+                    <td id="Sluttid9"> </td>
+                    <td id="CPR9"> </td>
+                    <td id="SP9"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato10"> </td>
+                    <td id="Starttid10"> </td>
+                    <td id="Sluttid10"> </td>
+                    <td id="CPR10"> </td>
+                    <td id="SP10"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato11"> </td>
+                    <td id="Starttid11"> </td>
+                    <td id="Sluttid11"> </td>
+                    <td id="CPR11"> </td>
+                    <td id="SP11"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Dato12"> </td>
+                    <td id="Starttid12"> </td>
+                    <td id="Sluttid12"> </td>
+                    <td id="CPR12"> </td>
+                    <td id="SP12"> </td>
+                    <td>
+                        <a href=Bilag/pdf_Example.pdf>
+                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
+                        </a>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+
+    </div>
+    </div>
+
+</section>
+
+</body>
+<script src="Aftaler.js"></script>
+<script src="KonsultationerScript.js"></script>
+</html>

@@ -29,6 +29,7 @@ function AftaleOprettelse(){
 }
 
 function Clear(){
+
     for (let a = 1; a <= i; a++){
         document.getElementById("Dato"+a).innerHTML = "";
         document.getElementById("Starttid"+a).innerHTML = "";
