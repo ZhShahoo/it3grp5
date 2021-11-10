@@ -29,7 +29,12 @@ function AftaleOprettelse(){
 }
 
 function Clear(){
-    for (){
-
+    for (let a = 1; a <= i; a++){
+        document.getElementById("Dato"+a).innerHTML = "";
+        document.getElementById("Starttid"+a).innerHTML = "";
+        document.getElementById("Sluttid"+a).innerHTML = "";
+        document.getElementById("CPR"+a).innerHTML = "";
+        document.getElementById("SP"+a).innerHTML = "";
     }
+    i = 1;
 }
