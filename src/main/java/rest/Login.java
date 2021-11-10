@@ -19,7 +19,7 @@ public class Login {
 
 
     @GET
-SQL sql=new SQL();
+
     public Response LoginValidering(@QueryParam("InputBrugernavn") String user, @QueryParam("InputKode") String kode) throws URISyntaxException {
 
         if (user.matches("[a-zA-Z]+"+"[1-9]+") && 1 <= kode.length()){
