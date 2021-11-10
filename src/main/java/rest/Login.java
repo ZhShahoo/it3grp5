@@ -22,9 +22,9 @@ public class Login {
             Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user",user)).build();
             System.out.println("Brugernavn: "+user);
             System.out.println("Kodeord: "+kode);
-            SQL sql= new SQL();
-            sql.getSQLConnection();
-            sql.findEKGMeasureFromPatient(user);
+       //     SQL sql= new SQL();
+       //     sql.getSQLConnection();
+       //     sql.findEKGMeasureFromPatient(user);
             return Login_Cookie;
         } else {
             throw new WebApplicationException("Fejl",Response.Status.FORBIDDEN);

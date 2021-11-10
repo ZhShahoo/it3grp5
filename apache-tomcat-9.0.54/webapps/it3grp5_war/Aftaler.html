@@ -92,8 +92,14 @@
 
     <p>&nbsp;</p>
 
+    <p>Notat</p>
+        <textarea type="text" id="Notat" ></textarea>
+
+        <p>&nbsp;</p>
+
     <input type="button" value="Tilføj aftale" onclick="AftaleOprettelse()">
-        <input type="button" value="Clear" onclick="Clear()">
+    <input type="button" value="Clear" onclick="Clear()">
+
 
 
     </form>
@@ -112,152 +118,126 @@
                     <th>Sluttid</th>
                     <th>Patient (CPR)</th>
                     <th>Sundhedspersonale</th>
+                    <th>Aftalt af</th>
                     <th>Notat</th>
                 </tr>
                 <!-- Resten er et eksempel på hvad tabellen kunne indeholder (inkl. en pdf som notat): -->
                 <tr>
-                    <td id="Dato1"> </td>
-                    <td id="Starttid1"> </td>
-                    <td id="Sluttid1"> </td>
-                    <td id="CPR1"> </td>
-                    <td id="SP1"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato1"> </td>
+                    <td nowrap="nowrap" id="Starttid1"> </td>
+                    <td nowrap="nowrap" id="Sluttid1"> </td>
+                    <td nowrap="nowrap" id="CPR1"> </td>
+                    <td nowrap="nowrap" id="SP1"> </td>
+                    <td nowrap="nowrap" id="Bruger1"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat1" ></textarea></td>
                 </tr>
                 <tr>
-                    <td id="Dato2"> </td>
-                    <td id="Starttid2"> </td>
-                    <td id="Sluttid2"> </td>
-                    <td id="CPR2"> </td>
-                    <td id="SP2"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato2"> </td>
+                    <td nowrap="nowrap" id="Starttid2"> </td>
+                    <td nowrap="nowrap" id="Sluttid2"> </td>
+                    <td nowrap="nowrap" id="CPR2"> </td>
+                    <td nowrap="nowrap" id="SP2"> </td>
+                    <td nowrap="nowrap" id="Bruger2"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat2" ></textarea></td>
+
                 </tr>
                 <tr>
-                    <td id="Dato3"> </td>
-                    <td id="Starttid3"> </td>
-                    <td id="Sluttid3"> </td>
-                    <td id="CPR3"> </td>
-                    <td id="SP3"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato3"> </td>
+                    <td nowrap="nowrap" id="Starttid3"> </td>
+                    <td nowrap="nowrap" id="Sluttid3"> </td>
+                    <td nowrap="nowrap" id="CPR3"> </td>
+                    <td nowrap="nowrap" id="SP3"> </td>
+                    <td nowrap="nowrap" id="Bruger3"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat3" ></textarea></td>
+
                 </tr>
                 <tr>
-                    <td id="Dato4"> </td>
-                    <td id="Starttid4"> </td>
-                    <td id="Sluttid4"> </td>
-                    <td id="CPR4"> </td>
-                    <td id="SP4"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato4"> </td>
+                    <td nowrap="nowrap" id="Starttid4"> </td>
+                    <td nowrap="nowrap" id="Sluttid4"> </td>
+                    <td nowrap="nowrap" id="CPR4"> </td>
+                    <td nowrap="nowrap" id="SP4"> </td>
+                    <td nowrap="nowrap" id="Bruger4"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat4" ></textarea></td>
+
                 </tr>
                 <tr>
-                    <td id="Dato5"> </td>
-                    <td id="Starttid5"> </td>
-                    <td id="Sluttid5"> </td>
-                    <td id="CPR5"> </td>
-                    <td id="SP5"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato5"> </td>
+                    <td nowrap="nowrap" id="Starttid5"> </td>
+                    <td nowrap="nowrap" id="Sluttid5"> </td>
+                    <td nowrap="nowrap" id="CPR5"> </td>
+                    <td nowrap="nowrap" id="SP5"> </td>
+                    <td nowrap="nowrap" id="Bruger5"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat5" ></textarea></td>
+
                 </tr>
                 <tr>
-                    <td id="Dato6"> </td>
-                    <td id="Starttid6"> </td>
-                    <td id="Sluttid6"> </td>
-                    <td id="CPR6"> </td>
-                    <td id="SP6"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato6"> </td>
+                    <td nowrap="nowrap" id="Starttid6"> </td>
+                    <td nowrap="nowrap" id="Sluttid6"> </td>
+                    <td nowrap="nowrap" id="CPR6"> </td>
+                    <td nowrap="nowrap" id="SP6"> </td>
+                    <td nowrap="nowrap" id="Bruger6"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat6" ></textarea></td>
                 </tr>
                 <tr>
-                    <td id="Dato7"> </td>
-                    <td id="Starttid7"> </td>
-                    <td id="Sluttid7"> </td>
-                    <td id="CPR7"> </td>
-                    <td id="SP7"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato7"> </td>
+                    <td nowrap="nowrap" id="Starttid7"> </td>
+                    <td nowrap="nowrap" id="Sluttid7"> </td>
+                    <td nowrap="nowrap" id="CPR7"> </td>
+                    <td nowrap="nowrap" id="SP7"> </td>
+                    <td nowrap="nowrap" id="Bruger7"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat7" ></textarea></td>
                 </tr>
                 <tr>
-                    <td id="Dato8"> </td>
-                    <td id="Starttid8"> </td>
-                    <td id="Sluttid8"> </td>
-                    <td id="CPR8"> </td>
-                    <td id="SP8"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato8"> </td>
+                    <td nowrap="nowrap" id="Starttid8"> </td>
+                    <td nowrap="nowrap" id="Sluttid8"> </td>
+                    <td nowrap="nowrap" id="CPR8"> </td>
+                    <td nowrap="nowrap" id="SP8"> </td>
+                    <td nowrap="nowrap" id="Bruger8"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat8" ></textarea></td>
+
                 </tr>
                 <tr>
-                    <td id="Dato9"> </td>
-                    <td id="Starttid9"> </td>
-                    <td id="Sluttid9"> </td>
-                    <td id="CPR9"> </td>
-                    <td id="SP9"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato9"> </td>
+                    <td nowrap="nowrap" id="Starttid9"> </td>
+                    <td nowrap="nowrap" id="Sluttid9"> </td>
+                    <td nowrap="nowrap" id="CPR9"> </td>
+                    <td nowrap="nowrap" id="SP9"> </td>
+                    <td nowrap="nowrap" id="Bruger9"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat9" ></textarea></td>
+
                 </tr>
                 <tr>
-                    <td id="Dato10"> </td>
-                    <td id="Starttid10"> </td>
-                    <td id="Sluttid10"> </td>
-                    <td id="CPR10"> </td>
-                    <td id="SP10"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato10"> </td>
+                    <td nowrap="nowrap" id="Starttid10"> </td>
+                    <td nowrap="nowrap" id="Sluttid10"> </td>
+                    <td nowrap="nowrap" id="CPR10"> </td>
+                    <td nowrap="nowrap" id="SP10"> </td>
+                    <td nowrap="nowrap" id="Bruger10"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat10" ></textarea></td>
+
                 </tr>
                 <tr>
-                    <td id="Dato11"> </td>
-                    <td id="Starttid11"> </td>
-                    <td id="Sluttid11"> </td>
-                    <td id="CPR11"> </td>
-                    <td id="SP11"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato11"> </td>
+                    <td nowrap="nowrap" id="Starttid11"> </td>
+                    <td nowrap="nowrap" id="Sluttid11"> </td>
+                    <td nowrap="nowrap" id="CPR11"> </td>
+                    <td nowrap="nowrap" id="SP11"> </td>
+                    <td nowrap="nowrap" id="Bruger11"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat11" ></textarea></td>
+
                 </tr>
                 <tr>
-                    <td id="Dato12"> </td>
-                    <td id="Starttid12"> </td>
-                    <td id="Sluttid12"> </td>
-                    <td id="CPR12"> </td>
-                    <td id="SP12"> </td>
-                    <td>
-                        <a href=Bilag/pdf_Example.pdf>
-                            <img class="PDF_Logo" src="Bilag/Pdf-2127829.png">
-                        </a>
-                    </td>
+                    <td nowrap="nowrap" id="Dato12"> </td>
+                    <td nowrap="nowrap" id="Starttid12"> </td>
+                    <td nowrap="nowrap" id="Sluttid12"> </td>
+                    <td nowrap="nowrap" id="CPR12"> </td>
+                    <td nowrap="nowrap" id="SP12"> </td>
+                    <td nowrap="nowrap" id="Bruger12"> </td>
+                    <td style="height: 100px" ><textarea type="text" style="height: 100%;width: 100%" id="Notat12" ></textarea></td>
+
                 </tr>
 
             </table>
