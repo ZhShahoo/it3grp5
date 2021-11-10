@@ -11,6 +11,8 @@ function AftaleOprettelse(){
     let Sluttid = document.getElementById("tid_til").value;
     let CPR = document.getElementById("CPR").value;
 
+
+
     if (Dato != null && StartTid != null && Sluttid != null && CPR.length == 10){
         document.getElementById("1").innerHTML = Dato;
         document.getElementById("2").innerHTML = StartTid;

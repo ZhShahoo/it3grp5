@@ -17,8 +17,11 @@ import static java.awt.SystemColor.window;
 @Produces({MediaType.TEXT_PLAIN})
 public class Login {
 
+
     @GET
+SQL sql=new SQL();
     public Response LoginValidering(@QueryParam("InputBrugernavn") String user, @QueryParam("InputKode") String kode) throws URISyntaxException {
+
         if (user.matches("[a-zA-Z]+"+"[1-9]+") && 1 <= kode.length()){
             Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user",user)).build();
             System.out.println("Brugernavn: "+user);
