@@ -91,19 +91,18 @@ public class SQL {
     }
 
 
-    public void findEKGMeasureFromPatient(int ID) { //bliver brugt til at finde data.
-        String SQL = "SELECT * FROM semesterprojekt2.maalinger where CPR=" + ID + ";";
+    public void findEKGMeasureFromPatient(String ID) { //bliver brugt til at finde data.
         try {
+            String Brugernavn = "SELECT * FROM lægedatabase.brugerliste where fullname=" + ID + ";";
             //statement = connection.createStatement();
-            resultSet = statement.executeQuery(SQL);
-            while (resultSet.next()) {
-                System.out.println(
-                        "ID: " + resultSet.getInt(1) + "\n" +
-                                "EKGMaaling:" + resultSet.getInt("EKGMeasure") + "\n" +
-                                "CPR:" + resultSet.getInt("CPR") + "\n" +
-                                "time:" + resultSet.getTimestamp("time") + "\n"
+            ResultSet Result = statement.executeQuery(Brugernavn);
 
-                );
+           // resultSet = statement.executeQuery(SQL);
+            while (resultSet.next()) {
+                 String a=resultSet.getString("fullname") ;
+                System.out.println(a);
+
+
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -122,24 +121,6 @@ public class SQL {
         }
     }
 
-    public String hentLogin(String s) throws SQLException {
-        SQL.getSqlOBJ().getSQLConnection();
-        PreparedStatement pp = connection.prepareStatement("SELECT * FROM lægedatabase.brugerliste WHERE USERNAME = ?;");
-        pp.setString(1, s);
-        String svar = "";
-        try {
-            ResultSet rs = pp.executeQuery();
-            while (rs.next()) {
-                svar = svar + rs.getString(1);
-                svar = svar + "A" + rs.getString(2);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        SQL.getSqlOBJ().stopSQLConnection();
-        return svar;
-
-    }
 
 
 }
