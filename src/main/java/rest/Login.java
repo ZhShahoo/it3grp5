@@ -22,7 +22,7 @@ public class Login {
         sql.getEKGDataFromTable(1);
 
 
-        if (user.matches(sql.Brugernavn)){
+        if (user.matches(sql.Brugernavn ) && kode.equals(sql.Adgangskode)){
 
             Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user",user)).build();
             System.out.println("Brugernavn: "+user);

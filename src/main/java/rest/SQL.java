@@ -5,6 +5,7 @@ import java.time.Instant;
 
 public class SQL {
     String Brugernavn;
+    String Adgangskode;
 
     static private final SQL sqlOBJ = new SQL();
 
@@ -79,6 +80,8 @@ public class SQL {
             resultSet = statement.executeQuery(query1);
             resultSet.next();
                 Brugernavn = resultSet.getString("fullname");
+                Adgangskode = resultSet.getString("password");
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -86,39 +89,7 @@ public class SQL {
     }
 
 
-    public void getTimeStamp(Timestamp lol) {
 
-
-    }
-
-
-    public void findEKGMeasureFromPatient(int ID) { //bliver brugt til at finde data.
-        System.out.println("1");
-        try {
-            System.out.println("2");
-            String SQL1 = "SELECT * FROM lægedatabase.brugerliste where fullname=" + ID + ";";
-            //statement = connection.createStatement();
-            System.out.println("3");
-            ResultSet Result = statement.executeQuery(SQL1);
-
-           // resultSet = statement.executeQuery(SQL);
-            System.out.println("4");
-            while (resultSet.next()) {
-                System.out.println("5");
-                System.out.println(
-                        "ID: " + resultSet.getInt(1) + "\n" +
-                                "EKGMaaling:" + resultSet.getInt("fullname") + "\n"
-                );
-
-                 String a=resultSet.getString("fullname") ;
-                System.out.println(a);
-
-
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
 
 
     // stop forbindelsen til databasen
