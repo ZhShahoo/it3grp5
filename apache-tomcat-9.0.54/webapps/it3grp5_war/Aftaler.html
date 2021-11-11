@@ -60,8 +60,8 @@
 <section class="container">
     <div class="left-half">
 
-<div>
-    <form id="Aftale-oprettelse">
+<div id="Aftale-oprettelse">
+    <form>
     <p>Bruger ID: <p id="Bruger">---</p></p>
 
         <p>&nbsp;</p>
@@ -100,10 +100,9 @@
     <input type="button" value="Tilføj aftale" onclick="AftaleOprettelse()">
     <input type="button" value="Clear" onclick="Clear()">
 
-
-
     </form>
 </div>
+
     </div>
 
 <div class="right-half">
@@ -111,7 +110,7 @@
     <div>
         <form>
             <!-- Tabel med 5 parameter: -->
-            <table>
+            <table id="Konsultationstabel">
                 <tr>
                     <th>Dato</th>
                     <th>Starttid</th>

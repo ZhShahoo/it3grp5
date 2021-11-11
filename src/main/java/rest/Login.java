@@ -17,21 +17,24 @@ public class Login {
     @GET
     public Response LoginValidering(@QueryParam("InputBrugernavn") String user, @QueryParam("InputKode") String kode) throws URISyntaxException {
 
-        SQL sql= new SQL();
+        SQL sql = new SQL();
 
-        sql.getEKGDataFromTable(1);
+        try {
+            for (int i = 1; i <= 100; i++) {
+                sql.getEKGDataFromTable(i);
+                if (user.matches(sql.Brugernavn) && kode.equals(sql.Adgangskode)) {
+                    Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user", user)).build();
+                    System.out.println("Brugernavn: " + user);
+                    System.out.println("Kodeord: " + kode);
 
-
-        if (user.matches(sql.Brugernavn ) && kode.equals(sql.Adgangskode)){
-
-            Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user",user)).build();
-            System.out.println("Brugernavn: "+user);
-            System.out.println("Kodeord: "+kode);
-
-            return Login_Cookie;
-        } else {
-            throw new WebApplicationException("Fejl",Response.Status.FORBIDDEN);
+                    return Login_Cookie;
+                }
+            }
+        } catch (URISyntaxException e) {
+            throw new WebApplicationException("Fejl", Response.Status.FORBIDDEN);
         }
+        return null;
     }
 }
+
 
