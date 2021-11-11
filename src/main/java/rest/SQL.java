@@ -4,7 +4,7 @@ import java.sql.*;
 import java.time.Instant;
 
 public class SQL {
-
+    String Brugernavn;
 
     static private final SQL sqlOBJ = new SQL();
 
@@ -21,19 +21,20 @@ public class SQL {
     // indstillinger, valg af database
     static String username = "bruger1";
     static String password = "kode1";
-    static String Schema = "lægedatabase";
+    static String Schema = "laegedatabasen";
     static String url = "jdbc:mysql://localhost:3306/" + Schema;
 
 
     public void getSQLConnection() {
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(url, username, password);
             statement = connection.createStatement();
 
             if (connection != null) {
                 System.out.println("Connected to MYSQL Schema:" + Schema);
             }
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
     }
@@ -71,19 +72,19 @@ public class SQL {
     }
 
     // metode til at hente EKG data fra tabel
-    public void getEKGDataFromTable(String CPR, double[] arkiv) {
-        String query1 = "SELECT * FROM lægedatabase.patient where CPR=" + CPR + ";";
-        int i = 0;
+    public String getEKGDataFromTable(int ID) {
+        getSQLConnection();
+        String query1 = "SELECT * FROM laegedatabasen.brugerliste where ID=" + ID + ";";
         try {
             resultSet = statement.executeQuery(query1);
-            while (resultSet.next() && i < 500) {
-                arkiv[i] = resultSet.getDouble("CPR");
-                i++;
-            }
+            resultSet.next();
+                Brugernavn = resultSet.getString("fullname");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        return Brugernavn;
     }
+
 
     public void getTimeStamp(Timestamp lol) {
 
@@ -91,14 +92,24 @@ public class SQL {
     }
 
 
-    public void findEKGMeasureFromPatient(String ID) { //bliver brugt til at finde data.
+    public void findEKGMeasureFromPatient(int ID) { //bliver brugt til at finde data.
+        System.out.println("1");
         try {
-            String Brugernavn = "SELECT * FROM lægedatabase.brugerliste where fullname=" + ID + ";";
+            System.out.println("2");
+            String SQL1 = "SELECT * FROM lægedatabase.brugerliste where fullname=" + ID + ";";
             //statement = connection.createStatement();
-            ResultSet Result = statement.executeQuery(Brugernavn);
+            System.out.println("3");
+            ResultSet Result = statement.executeQuery(SQL1);
 
            // resultSet = statement.executeQuery(SQL);
+            System.out.println("4");
             while (resultSet.next()) {
+                System.out.println("5");
+                System.out.println(
+                        "ID: " + resultSet.getInt(1) + "\n" +
+                                "EKGMaaling:" + resultSet.getInt("fullname") + "\n"
+                );
+
                  String a=resultSet.getString("fullname") ;
                 System.out.println(a);
 
