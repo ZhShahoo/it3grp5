@@ -64,9 +64,49 @@ h1 {
     height: 60px;
 }
 
-#Aftale-oprettelse{
+.Aftale-oprettelse{
+    border-radius: 5px;
+    background-color: ghostwhite;
+    border-color: ghostwhite;
+
 }
 
+.Aftale-tekst{
+    font-weight: bold;
+}
+
+table{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: green;
+    background-color: #90D7FF;
+}
+
+td{
+    padding: 10px;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 2%;
+}
+
+th{
+    padding: 10px;
+    border-collapse: collapse;
+    background-color: ghostwhite;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.Aftaler-knapper{
+    font-weight: bold;
+    height: 30px;
+    width: min-content;
+    border-radius: 5px;
+    background-color: ghostwhite;
+    border-color: ghostwhite;
+}
 
 
 

@@ -2,6 +2,7 @@
 <html lang="en">
 <link rel="stylesheet" href="CSS/Aftaler.css">
 <link rel="stylesheet" href="CSS/Home.css">
+<link rel="stylesheet" type="text/css" href="CSS/AftalerOgKonsultation.css">
 
 
 <head>
@@ -14,9 +15,6 @@
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet"type="text/css" href="CSS/Konsultationer.css">
-    <link rel="stylesheet"type="text/css" href="CSS/Home.css">
-    <link rel="stylesheet" type="text/css" href="CSS/opdelingIAftalerOgKonsultation.css">
     <meta charset="UTF-8">
     <title>Home</title> <!-- The title-->
 </head>
@@ -60,46 +58,46 @@
 <section class="container">
     <div class="left-half">
 
-<div id="Aftale-oprettelse">
+<div>
     <form>
-    <p>Bruger ID: <p id="Bruger">---</p></p>
+    <p class="Aftale-tekst">Bruger ID <p id="Bruger">---</p></p>
 
         <p>&nbsp;</p>
 
-        <p>Sundhedspersonale</p>
-        <input type="text" id="SP" required>
+        <p class="Aftale-tekst" >Sundhedspersonale</p>
+        <input class="Aftale-oprettelse" type="text" id="SP" required>
 
     <p>&nbsp;</p>
 
-    <p>Dato</p>
-    <input type="date" id="dato"
+    <p class="Aftale-tekst" >Dato</p>
+    <input class="Aftale-oprettelse" type="date" id="dato"
            min="2018-01-01" max="2023-12-31" required>
 
     <p>&nbsp;</p>
 
-    <p>Starttid</p>
-    <input type="time" id="tid_fra" required>
+    <p class="Aftale-tekst" >Starttid</p>
+    <input class="Aftale-oprettelse" type="time" id="tid_fra" required>
 
     <p>&nbsp;</p>
 
-    <p>Sluttid</p>
-    <input type="time" id="tid_til" required>
+    <p class="Aftale-tekst" >Sluttid</p>
+    <input class="Aftale-oprettelse" type="time" id="tid_til" required>
 
     <p>&nbsp;</p>
 
-    <p>Patient (CPR)</p>
-    <input type="text" id="CPR" required>
+    <p class="Aftale-tekst" >Patient (CPR)</p>
+    <input class="Aftale-oprettelse" type="text" id="CPR" required>
 
     <p>&nbsp;</p>
 
-    <p>Notat</p>
-        <textarea type="text" id="Notat" ></textarea>
+    <p class="Aftale-tekst" >Notat</p>
+        <textarea class="Aftale-oprettelse" type="text" id="Notat" ></textarea>
 
         <p>&nbsp;</p>
 
-    <input type="button" value="Tilføj aftale" onclick="AftaleOprettelse()">
-    <input type="button" value="Clear" onclick="Clear()">
-    <input type="button" value="Opdater" onclick="KonsultationsUdfyldning()">
+    <input class="Aftaler-knapper" type="button" value="  Tilføj aftale  " onclick="AftaleOprettelse()">
+    <input class="Aftaler-knapper" type="button" value="  Clear  " onclick="Clear()">
+    <input class="Aftaler-knapper" type="button" value="  Opdater  " onclick="KonsultationsUdfyldning()">
 
     </form>
 </div>
@@ -121,8 +119,6 @@
                     <th>Aftalt af</th>
                     <th>Notat</th>
                 </tr>
-                <!-- Resten er et eksempel på hvad tabellen kunne indeholder (inkl. en pdf som notat): -->
-
             </table>
         </form>
 
