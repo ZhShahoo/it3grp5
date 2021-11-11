@@ -24,9 +24,6 @@ public class Login {
                 sql.getEKGDataFromTable(i);
                 if (user.matches(sql.Brugernavn) && kode.equals(sql.Adgangskode)) {
                     Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user", user)).build();
-                    System.out.println("Brugernavn: " + user);
-                    System.out.println("Kodeord: " + kode);
-
                     return Login_Cookie;
                 }
             }

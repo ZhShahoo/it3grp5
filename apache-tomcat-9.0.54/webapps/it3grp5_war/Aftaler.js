@@ -1,5 +1,6 @@
 BrugerFremvsinging();
 let i = 1;
+let json;
 
 function BrugerFremvsinging() {
     Bruger = sessionStorage.getItem("Godkendt_Bruger");
@@ -17,15 +18,17 @@ function AftaleOprettelse(){
 
 
     if (Dato != null && StartTid != null && Sluttid != null && CPR.length == 10 && SP != null){
+        KonsultationsUdfyldning();
+        Bruger = sessionStorage.getItem("Godkendt_Bruger");
+
         document.getElementById("Dato"+i).innerHTML = Dato;
         document.getElementById("Starttid"+i).innerHTML = StartTid;
         document.getElementById("Sluttid"+i).innerHTML = Sluttid;
         document.getElementById("CPR"+i).innerHTML = CPR;
         document.getElementById("SP"+i).innerHTML = SP;
-        Bruger = sessionStorage.getItem("Godkendt_Bruger");
         document.getElementById("Bruger"+i).innerHTML = Bruger;
         document.getElementById("Notat"+i).innerHTML = Notat;
-    //    addRow()
+
         i++;
     } else{
         alert("Indtast venligst alle oplsyninger. ")
@@ -46,28 +49,41 @@ function Clear(){
     i = 1;
 }
 
-function addRow(){
-    let tableRef = document.getElementById(Konsultationstabel);
-    let newRow = tableRef.insertRow(-1);
+function KonsultationsUdfyldning(){
+    var tabel = document.getElementById("Konsultationstabel");
+    var raekke = tabel.insertRow(i);
 
-    let newCell0 = newRow.insertCell(0);
-    let newCell1 = newRow.insertCell(1);
-    let newCell2 = newRow.insertCell(2);
-    let newCell3 = newRow.insertCell(3);
-    let newCell4 = newRow.insertCell(4);
-    let newCell5 = newRow.insertCell(5);
+    var Dato = raekke.insertCell(0);
+    Dato.id="Dato"+i
+    Dato.noWrap= true;
 
-    let newText0 = document.createTextNode('0000');
-    let newText1 = document.createTextNode('1111');
-    let newText2 = document.createTextNode('2222');
-    let newText3 = document.createTextNode('3333');
-    let newText4 = document.createTextNode('4444');
-    let newText5 = document.createTextNode('5555');
+    var Starttid = raekke.insertCell(1);
+    Starttid.id="Starttid"+i
+    Starttid.noWrap= true;
 
-    newCell0.appendChild(newText0);
-    newCell1.appendChild(newText1);
-    newCell2.appendChild(newText2);
-    newCell3.appendChild(newText3);
-    newCell4.appendChild(newText4);
-    newCell4.appendChild(newText5);
+    var Sluttid = raekke.insertCell(2);
+    Sluttid.id="Sluttid"+i
+    Sluttid.noWrap= true;
+
+    var CPR = raekke.insertCell(3);
+    CPR.id="CPR"+i
+    CPR.noWrap= true;
+
+    var SP = raekke.insertCell(4);
+    SP.id="SP"+i
+    SP.noWrap= true;
+
+    var Bruger = raekke.insertCell(5);
+    Bruger.id="Bruger"+i
+    Bruger.noWrap= true;
+
+    var Notat = raekke.insertCell(6);
+    Notat.style.height='100px'
+    var TextArea = document.createElement("TEXTAREA");
+    TextArea.style.border= 'none';
+    TextArea.style.height= '100px';
+    TextArea.style.width= '100%';
+    TextArea.style.boxSizing= 'border-box';
+    Notat.appendChild(TextArea)
+    TextArea.id="Notat"+i
 }

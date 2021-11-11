@@ -16,13 +16,7 @@ public class Aftaler {
     @GET
     public Response AftaleOprettelse(@QueryParam("dato") String dato, @QueryParam("tid_fra") String starttid, @QueryParam("tid_til") String sluttid, @QueryParam("CPR") String CPR, @QueryParam("SP") String sundhedspersonale,@QueryParam("Notat") String notat  ) throws URISyntaxException {
         SQL sql = new SQL();
-
-        try {
-            sql.retrieveAftale(1);
-            Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user", user)).build();
-
-        }
-
+        return null;
     }
 
 }

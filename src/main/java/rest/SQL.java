@@ -42,7 +42,6 @@ public class SQL {
             statement = connection.createStatement();
 
             if (connection != null) {
-                System.out.println("Connected to MYSQL Schema:" + Schema);
             }
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();

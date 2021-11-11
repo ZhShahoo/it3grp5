@@ -1,5 +1,6 @@
 BrugerFremvsinging();
 let i = 1;
+let json;
 
 function BrugerFremvsinging() {
     Bruger = sessionStorage.getItem("Godkendt_Bruger");
@@ -17,15 +18,17 @@ function AftaleOprettelse(){
 
 
     if (Dato != null && StartTid != null && Sluttid != null && CPR.length == 10 && SP != null){
+        KonsultationsUdfyldning();
+        Bruger = sessionStorage.getItem("Godkendt_Bruger");
+
         document.getElementById("Dato"+i).innerHTML = Dato;
         document.getElementById("Starttid"+i).innerHTML = StartTid;
         document.getElementById("Sluttid"+i).innerHTML = Sluttid;
         document.getElementById("CPR"+i).innerHTML = CPR;
         document.getElementById("SP"+i).innerHTML = SP;
-        Bruger = sessionStorage.getItem("Godkendt_Bruger");
         document.getElementById("Bruger"+i).innerHTML = Bruger;
         document.getElementById("Notat"+i).innerHTML = Notat;
-    //    addRow()
+
         i++;
     } else{
         alert("Indtast venligst alle oplsyninger. ")
@@ -47,5 +50,40 @@ function Clear(){
 }
 
 function KonsultationsUdfyldning(){
+    var tabel = document.getElementById("Konsultationstabel");
+    var raekke = tabel.insertRow(i);
 
+    var Dato = raekke.insertCell(0);
+    Dato.id="Dato"+i
+    Dato.noWrap= true;
+
+    var Starttid = raekke.insertCell(1);
+    Starttid.id="Starttid"+i
+    Starttid.noWrap= true;
+
+    var Sluttid = raekke.insertCell(2);
+    Sluttid.id="Sluttid"+i
+    Sluttid.noWrap= true;
+
+    var CPR = raekke.insertCell(3);
+    CPR.id="CPR"+i
+    CPR.noWrap= true;
+
+    var SP = raekke.insertCell(4);
+    SP.id="SP"+i
+    SP.noWrap= true;
+
+    var Bruger = raekke.insertCell(5);
+    Bruger.id="Bruger"+i
+    Bruger.noWrap= true;
+
+    var Notat = raekke.insertCell(6);
+    Notat.style.height='100px'
+    var TextArea = document.createElement("TEXTAREA");
+    TextArea.style.border= 'none';
+    TextArea.style.height= '100px';
+    TextArea.style.width= '100%';
+    TextArea.style.boxSizing= 'border-box';
+    Notat.appendChild(TextArea)
+    TextArea.id="Notat"+i
 }
