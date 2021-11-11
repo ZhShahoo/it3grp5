@@ -6,6 +6,15 @@ import java.time.Instant;
 public class SQL {
     String Brugernavn;
     String Adgangskode;
+    String CPR;
+    String dato;
+    String startTidspunkt;
+    String slutTidspunkt;
+    String sundhedsPersonale;
+    String aftalePerson;
+    String  notat;
+
+
 
     static private final SQL sqlOBJ = new SQL();
 
@@ -88,7 +97,27 @@ public class SQL {
         return Brugernavn;
     }
 
+    public String retrieveAftale(int ID) {
+        getSQLConnection();
+        String query1 = "SELECT * FROM laegedatabasen.patient where ID=" + ID + ";";
+        try {
+            resultSet = statement.executeQuery(query1);
+            resultSet.next();
+            CPR = resultSet.getString("CPR");
+            dato = resultSet.getString("dato");
+            startTidspunkt = resultSet.getString("starttid");
+            slutTidspunkt = resultSet.getString("sluttid");
+            sundhedsPersonale = resultSet.getString("sundhedspersonale");
+            aftalePerson = resultSet.getString("aftaleperson");
+            notat= resultSet.getString("notater");
 
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return query1;
+    }
 
 
 
