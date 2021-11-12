@@ -48,19 +48,7 @@ public class SQL {
         }
     }
 
-    // metode til at lave en ny patient
-    public void createNewPatient(String CPR) {
-        String write_to_database1 = "INSERT INTO patienter (ID, CPR, Name) values(?,?,?);";
-        try {
-            preparedStatement = connection.prepareStatement(write_to_database1);
-            preparedStatement.setInt(1, 1);
-            preparedStatement.setString(2, CPR);
-            preparedStatement.setString(3, CPR);
-            preparedStatement.execute();
-        } catch (SQLException throwables) {
-            System.out.println("CPR eksisterer allerede i systemet.");
-        }
-    }
+
 
 
     // metode til at skrive data i databsen
@@ -79,6 +67,10 @@ public class SQL {
             throwables.printStackTrace();
         }
     }
+
+
+
+
 
     // metode til at hente EKG data fra tabel
     public String getEKGDataFromTable(int ID) {
@@ -135,4 +127,24 @@ public class SQL {
 
 
 
-}
+    public String opretNyPatient(String CPR) {
+        getSQLConnection();
+        String write_to_database1 = "INSERT INTO laegedatabasen.patient (CPR) values(?);";
+        try {
+            preparedStatement = connection.prepareStatement(write_to_database1);
+            preparedStatement.setString(1, CPR);
+            preparedStatement.execute();
+        } catch (SQLException throwables) {
+            System.out.println("CPR eksisterer allerede i systemet.");
+        }
+
+        return write_to_database1;
+    }
+
+
+
+    }
+
+
+
+
