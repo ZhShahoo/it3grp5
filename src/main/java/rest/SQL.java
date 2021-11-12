@@ -102,13 +102,15 @@ public class SQL {
         try {
             resultSet = statement.executeQuery(query1);
             resultSet.next();
-            CPR = resultSet.getString("CPR");
+            System.out.println(
+            CPR = resultSet.getString("CPR"));
             dato = resultSet.getString("dato");
             startTidspunkt = resultSet.getString("starttid");
             slutTidspunkt = resultSet.getString("sluttid");
             sundhedsPersonale = resultSet.getString("sundhedspersonale");
             aftalePerson = resultSet.getString("aftaleperson");
             notat= resultSet.getString("notater");
+
 
 
         } catch (SQLException throwables) {

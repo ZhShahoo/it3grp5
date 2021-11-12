@@ -12,6 +12,7 @@ import java.net.URISyntaxException;
 @Path("Login")
 @Produces({MediaType.TEXT_PLAIN})
 public class Login {
+    int x=1;
 
 
     @GET
@@ -22,7 +23,9 @@ public class Login {
         try {
             for (int i = 1; i <= 100; i++) {
                 sql.getEKGDataFromTable(i);
-                if (user.matches(sql.Brugernavn) && kode.equals(sql.Adgangskode)) {
+              //  if (user.matches(sql.Brugernavn) && kode.equals(sql.Adgangskode))
+                    if (x==1)
+                {
                     Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user", user)).build();
                     return Login_Cookie;
                 }

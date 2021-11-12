@@ -6,17 +6,29 @@ import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 
+import static rest.GiraffeDao.*;
 
 
 @Path("Aftaler")
-@Produces({MediaType.TEXT_PLAIN})
-public class Aftaler {
-
+    @Consumes({MediaType.APPLICATION_JSON})
+    public class Aftaler {
     @GET
-    public Response AftaleOprettelse(@QueryParam("dato") String dato, @QueryParam("tid_fra") String starttid, @QueryParam("tid_til") String sluttid, @QueryParam("CPR") String CPR, @QueryParam("SP") String sundhedspersonale,@QueryParam("Notat") String notat  ) throws URISyntaxException {
-        SQL sql = new SQL();
-        return null;
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Patient> getGiraffes() {
+        return getInstance().getGiraffes();
     }
 
-}
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Patient postPatient(Patient p) {
+        getInstance().getGiraffes().add(p);
+        return p;
+    }
+
+
+
+    }
+
