@@ -25,6 +25,7 @@ import static rest.GiraffeDao.*;
     @Produces(MediaType.APPLICATION_JSON)
     public Patient postPatient(Patient p) {
         getInstance().getGiraffes().add(p);
+        System.out.println(p.name);
         return p;
     }
 
