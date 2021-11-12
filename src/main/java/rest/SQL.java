@@ -79,8 +79,10 @@ public class SQL {
         try {
             resultSet = statement.executeQuery(query1);
             resultSet.next();
+            if (resultSet != null) {
                 Brugernavn = resultSet.getString("fullname");
                 Adgangskode = resultSet.getString("password");
+            }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
