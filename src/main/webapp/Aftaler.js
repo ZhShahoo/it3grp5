@@ -74,7 +74,7 @@ function KonsultationsUdfyldning(){
     TextArea.id="Notat"+i
 }
 async function opretGiraf(){
-    let girafform = document.getElementById("girafform");
+    let girafform = document.getElementById("SPform");
     let formData = new FormData(girafform)
     let patientJson = Object.fromEntries(formData);
     let res = await fetch("http://localhost:8080/it3grp5_war/rest/Aftaler", {
