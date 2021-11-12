@@ -24,8 +24,15 @@ SQL sql=new SQL();
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Patient postPatient(Patient p) {
+        String CPR = null;
         getInstance().getGiraffes().add(p);
         sql.opretNyPatient(p.name, p.dato,"11:30","12:00", "knud", p.aftaleperson, "flibsmorkforb");
+        if (p.name.length() == 10 && p.name.matches("[0-9]+")){
+            CPR = p.name;
+        }
+        if (p.name.length() == 5)
+
+        System.out.println("CPR er:"+CPR);
 
 
         return p;
