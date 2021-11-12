@@ -20,11 +20,13 @@ import static rest.GiraffeDao.*;
         return getInstance().getGiraffes();
     }
 
-
+SQL sql=new SQL();
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Patient postPatient(Patient p) {
         getInstance().getGiraffes().add(p);
+        sql.opretNyPatient(p.name);
+
         System.out.println(p.name);
         return p;
     }

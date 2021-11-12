@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GiraffeDao {
+    SQL sql1=new SQL();
     private List<Patient> giraffes = new ArrayList<>();
     private static GiraffeDao instance = new GiraffeDao();
+
+
 
     private GiraffeDao(){
         Patient melman = new Patient();
@@ -24,4 +27,5 @@ public class GiraffeDao {
     public List<Patient> getGiraffes() {
         return giraffes;
     }
+
 }
