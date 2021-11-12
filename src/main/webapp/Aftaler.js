@@ -20,6 +20,7 @@ function AftaleOprettelse(){
     if (Dato != null && StartTid != null && Sluttid != null && CPR.length == 10 && SP != null){
         KonsultationsUdfyldning();
         Bruger = sessionStorage.getItem("Godkendt_Bruger");
+        await
 
         document.getElementById("Dato"+i).innerHTML = Dato;
         document.getElementById("Starttid"+i).innerHTML = StartTid;
@@ -73,11 +74,12 @@ function KonsultationsUdfyldning(){
     Notat.appendChild(TextArea)
     TextArea.id="Notat"+i
 }
-async function opretGiraf(){
-    let girafform = document.getElementById("SPform");
-    let formData = new FormData(girafform)
+async function opretGiraf(form1){
+    let KTform = document.getElementById(form1);
+
+    let formData = new FormData(KTform)
     let patientJson = Object.fromEntries(formData);
-    let res = await fetch("http://localhost:8080/it3grp5_war/rest/Aftaler", {
+    let res = await fetch("/it3grp5_war/rest/Aftaler", {
         method:"POST",
         body: JSON.stringify(patientJson),
         headers:{
