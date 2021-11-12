@@ -25,9 +25,9 @@ SQL sql=new SQL();
     @Produces(MediaType.APPLICATION_JSON)
     public Patient postPatient(Patient p) {
         getInstance().getGiraffes().add(p);
-        sql.opretNyPatient(p.name);
+        sql.opretNyPatient(p.name, p.dato,"11:30","12:00", "knud", p.aftaleperson, "flibsmorkforb");
 
-        System.out.println(p.name);
+
         return p;
     }
 

@@ -127,12 +127,18 @@ public class SQL {
 
 
 
-    public String opretNyPatient(String CPR) {
+    public String opretNyPatient(String CPR, String dato, String startTidspunkt, String slutTidspunkt, String sundhedsPersonale, String aftalePerson, String notater) {
         getSQLConnection();
-        String write_to_database1 = "INSERT INTO laegedatabasen.patient (CPR) values(?);";
+        String write_to_database1 = "INSERT INTO laegedatabasen.patient (CPR, dato,starttid,sluttid,sundhedspersonale,aftaleperson,notater) values(?,?,?,?,?,?,?);";
         try {
             preparedStatement = connection.prepareStatement(write_to_database1);
             preparedStatement.setString(1, CPR);
+            preparedStatement.setString(2, dato);
+            preparedStatement.setString(3, startTidspunkt);
+            preparedStatement.setString(4, slutTidspunkt);
+            preparedStatement.setString(5, sundhedsPersonale);
+            preparedStatement.setString(6, aftalePerson);
+            preparedStatement.setString(7, notater);
             preparedStatement.execute();
         } catch (SQLException throwables) {
             System.out.println("CPR eksisterer allerede i systemet.");

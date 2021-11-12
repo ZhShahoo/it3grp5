@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GiraffeDao {
-    SQL sql1=new SQL();
     private List<Patient> giraffes = new ArrayList<>();
     private static GiraffeDao instance = new GiraffeDao();
 
