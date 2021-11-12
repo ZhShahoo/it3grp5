@@ -1,12 +1,3 @@
-h1{
-    color: black;
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 32px;
-    font-weight: bolder;
-}
-
 #Opdater{
     height: 35px;
     width: 60px;
@@ -17,10 +8,6 @@ h1{
     font-weight: normal;
 }
 
-#OpdaterHolder{
-    text-align: left;
-    margin-left: 35px;
-}
 
 table{
     width: 95%;
@@ -42,8 +29,4 @@ th{
     border-collapse: collapse;
     background-color: #DCDCDC;
     border-radius: 5%;
-}
-
-.PDF_Logo{
-    width: 25px;
 }

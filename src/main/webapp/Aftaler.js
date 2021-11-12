@@ -35,20 +35,6 @@ function AftaleOprettelse(){
     }
 }
 
-function Clear(){
-
-    for (let a = 1; a <= i; a++){
-        document.getElementById("Dato"+a).innerHTML = "";
-        document.getElementById("Starttid"+a).innerHTML = "";
-        document.getElementById("Sluttid"+a).innerHTML = "";
-        document.getElementById("CPR"+a).innerHTML = "";
-        document.getElementById("SP"+a).innerHTML = "";
-        document.getElementById("Bruger"+a).innerHTML = "";
-        document.getElementById("Notat"+a).innerHTML = "";
-    }
-    i = 1;
-}
-
 function KonsultationsUdfyldning(){
     var tabel = document.getElementById("Konsultationstabel");
     var raekke = tabel.insertRow(i);
