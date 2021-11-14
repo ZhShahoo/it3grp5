@@ -14,20 +14,20 @@ import static rest.GiraffeDao.*;
 @Path("Aftaler")
     @Consumes({MediaType.APPLICATION_JSON})
     public class Aftaler {
+    SQL sql=new SQL();
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Patient> getGiraffes() {
         return getInstance().getGiraffes();
     }
 
-SQL sql=new SQL();
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Patient postPatient(Patient p) {
 
         getInstance().getGiraffes().add(p);
 
-        sql.opretNyPatient(p.CPR,p.dato,p.startTidspunkt,p.slutTidspunkt,p.name,p.name,p.notater);
 
         System.out.println("dato: " + p.dato );
         System.out.println("CPR: " + p.CPR );
@@ -35,15 +35,12 @@ SQL sql=new SQL();
         System.out.println("start: " + p.startTidspunkt );
         System.out.println("slut: " + p.slutTidspunkt );
         System.out.println("CPR: " + p.notater );
-        return p;
 
-
-
+        if (p.dato != null && p.CPR != null && p.name != null && p.startTidspunkt != null && p.slutTidspunkt != null && p.notater != null){
+            sql.opretNyPatient(p.CPR,p.dato,p.startTidspunkt,p.slutTidspunkt,p.name,p.name,p.notater);
         }
-
-
-
-
+        return p;
+        }
     }
 
 

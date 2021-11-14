@@ -4,6 +4,7 @@ import java.sql.*;
 import java.time.Instant;
 
 public class SQL {
+    int tidstæller = 1;
     String Brugernavn;
     String Adgangskode;
     String CPR;
