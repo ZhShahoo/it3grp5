@@ -70,34 +70,34 @@
     <p>&nbsp;</p>
 
     <p class="Aftale-tekst" >Dato</p>
-        <form id="Datoform"> <input name="name" class="Aftale-oprettelse" type="date" id="dato"
+        <form id="Datoform"> <input name="dato" class="Aftale-oprettelse" type="date" id="dato"
            min="2018-01-01" max="2023-12-31" required> </form>
 
     <p>&nbsp;</p>
 
     <p class="Aftale-tekst" >Starttid</p>
-        <form id="Starttidform"> <input name="name" class="Aftale-oprettelse" type="time" id="tid_fra" required> </form>
+        <form id="Starttidform"> <input name="startTidspunkt" class="Aftale-oprettelse" type="time" id="tid_fra" required> </form>
 
     <p>&nbsp;</p>
 
     <p class="Aftale-tekst" >Sluttid</p>
-        <form id="Sluttidform"> <input name="name" class="Aftale-oprettelse" type="time" id="tid_til" required> </form>
+        <form id="Sluttidform"> <input name="slutTidspunkt" class="Aftale-oprettelse" type="time" id="tid_til" required> </form>
 
     <p>&nbsp;</p>
 
     <p class="Aftale-tekst" >Patient (CPR)</p>
-        <form id="CPRform">  <input name="name" class="Aftale-oprettelse" type="text" id="CPR" required> </form>
+        <form id="CPRform">  <input name="CPR" class="Aftale-oprettelse" type="text" id="CPR" required> </form>
 
     <p>&nbsp;</p>
 
     <p class="Aftale-tekst" >Notat</p>
-        <form id="Notatform"> <textarea name="name" class="Aftale-oprettelse" type="text" id="Notat" ></textarea> </form>
+        <form id="Notatform"> <textarea name="notater" class="Aftale-oprettelse" type="text" id="Notat" ></textarea> </form>
 
         <p>&nbsp;</p>
 
     <input class="Aftaler-knapper" type="button" value="  Tilføj aftale  " onclick="AftaleOprettelse()">
     <input class="Aftaler-knapper" type="button" value="  Opdater  "onclick="
-    opretGiraf('Brugerform')
+    opretGiraf('aftale')
     opretGiraf('SPform')
     opretGiraf('Datoform')
     opretGiraf('Starttidform')

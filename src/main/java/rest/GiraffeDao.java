@@ -8,16 +8,6 @@ public class GiraffeDao {
     private static GiraffeDao instance = new GiraffeDao();
 
 
-
-    private GiraffeDao(){
-        Patient melman = new Patient();
-        Patient marius = new Patient();
-        melman.setName("melman");
-        marius.setName("marius");
-        giraffes.add(melman);
-        giraffes.add(marius);
-    }
-
     public static  GiraffeDao getInstance(){
         return instance;
     }

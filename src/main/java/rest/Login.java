@@ -16,13 +16,14 @@ public class Login {
 
 
     @GET
-    public Response LoginValidering(@QueryParam("InputBrugernavn") String user, @QueryParam("InputKode") String kode) throws URISyntaxException {
+
+    public Response loginValidering(@QueryParam("InputBrugernavn") String user, @QueryParam("InputKode") String kode) throws URISyntaxException {
 
         SQL sql = new SQL();
 
         try {
             for (int i = 1; i <= 100; i++) {
-                sql.getEKGDataFromTable(i);
+                sql.getLoginInfo(i);
                 if (user.matches(sql.Brugernavn) && kode.equals(sql.Adgangskode))
                 {
                     Response Login_Cookie = Response.seeOther(new URI("../Home.html")).cookie(new NewCookie("user", user)).build();

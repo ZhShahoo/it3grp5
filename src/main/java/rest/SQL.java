@@ -72,8 +72,8 @@ public class SQL {
 
 
 
-    // metode til at hente EKG data fra tabel
-    public String getEKGDataFromTable(int ID) {
+    // metode til at hente Logindata fra tabel
+    public String getLoginInfo(int ID) {
         getSQLConnection();
         String query1 = "SELECT * FROM laegedatabasen.brugerliste where ID=" + ID + ";";
         try {
@@ -104,8 +104,6 @@ public class SQL {
             sundhedsPersonale = resultSet.getString("sundhedspersonale");
             aftalePerson = resultSet.getString("aftaleperson");
             notat= resultSet.getString("notater");
-
-
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

@@ -1,3 +1,8 @@
+
+
+let aftaleString="hej med dig, hvordan går det1234"
+
+
 BrugerFremvsinging();
 let i = 1;
 let json;
@@ -74,8 +79,7 @@ function KonsultationsUdfyldning(){
     TextArea.id="Notat"+i
 }
 async function opretGiraf(form1){
-    let KTform = document.getElementById(form1);
-
+    let KTform = document.getElementById(form1)
     let formData = new FormData(KTform)
     let patientJson = Object.fromEntries(formData);
     let res = await fetch("/it3grp5_war/rest/Aftaler", {

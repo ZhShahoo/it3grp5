@@ -24,21 +24,28 @@ SQL sql=new SQL();
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Patient postPatient(Patient p) {
-        String CPR = null;
+
         getInstance().getGiraffes().add(p);
-        sql.opretNyPatient(p.name, p.dato,"11:30","12:00", "knud", p.aftaleperson, "flibsmorkforb");
-        if (p.name.length() == 10 && p.name.matches("[0-9]+")){
-            CPR = p.name;
-        }
-        if (p.name.length() == 5)
 
-        System.out.println("CPR er:"+CPR);
+        sql.opretNyPatient(p.CPR,p.dato,p.startTidspunkt,p.slutTidspunkt,p.name,p.name,p.notater);
 
-
+        System.out.println("dato: " + p.dato );
+        System.out.println("CPR: " + p.CPR );
+        System.out.println("name: " + p.name );
+        System.out.println("start: " + p.startTidspunkt );
+        System.out.println("slut: " + p.slutTidspunkt );
+        System.out.println("CPR: " + p.notater );
         return p;
+
+
+
+        }
+
+
+
+
     }
 
 
 
-    }
 
