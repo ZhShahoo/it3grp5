@@ -18,7 +18,7 @@ import static rest.PatientDAO.*;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Patient> getGiraffes() {
+    public List<Patient> getPatienter() {
         return getInstance().getPatienter();
     }
 
