@@ -112,7 +112,7 @@ function updatePatienter(json) {
         listelements += ("<li>"+element.name+"</li>")
     })
 
-    let girafList = document.getElementById("giraffer");
-    girafList.innerHTML=listelements
+    let patientList = document.getElementById("Patient");
+    patientList.innerHTML=listelements
 }
 
