@@ -29,6 +29,7 @@ import static rest.PatientDAO.*;
         getInstance().getPatienter().add(p);
 
 
+
         System.out.println("dato: " + p.dato );
         System.out.println("CPR: " + p.CPR );
         System.out.println("name: " + p.name );
