@@ -78,7 +78,7 @@ function KonsultationsUdfyldning(){
     Notat.appendChild(TextArea)
     TextArea.id="Notat"+i
 }
-async function opretGiraf(form1){
+async function opretPatient(form1){
     let KTform = document.getElementById(form1)
     let formData = new FormData(KTform)
     let patientJson = Object.fromEntries(formData);
@@ -89,24 +89,24 @@ async function opretGiraf(form1){
             'content-type':"application/json"
         }
     })
-    alert (res);
-    await hentGiraffer();
+    //alert (res);
+    await hentPatienter();
 }
 
 
-async function hentGiraffer(){
+async function hentPatienter(){
     let result = await fetch("http://localhost:8080/it3grp5_war/rest/Aftaler");
     console.log(result.status)
     if (result.status!=200){
-        alert("noget gik galt!");
+        //alert("noget gik galt!");
     }
     let json = await result.json();
     console.log(json)
-    updateGiraffes(json)
+    updatePatienter(json)
 
 }
 
-function updateGiraffes(json) {
+function updatePatienter(json) {
     let listelements =""
     json.forEach(function(element){
         listelements += ("<li>"+element.name+"</li>")
