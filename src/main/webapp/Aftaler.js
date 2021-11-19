@@ -26,6 +26,14 @@ function AftaleOprettelse(){
         KonsultationsUdfyldning();
         Bruger = sessionStorage.getItem("Godkendt_Bruger");
 
+        opretPatient(Bruger)
+        opretPatient('SPform')
+        opretPatient('Datoform')
+        opretPatient('Starttidform')
+        opretPatient('Sluttidform')
+        opretPatient('CPRform')
+        opretPatient('Notatform')
+
         document.getElementById("Dato"+i).innerHTML = Dato;
         document.getElementById("Starttid"+i).innerHTML = StartTid;
         document.getElementById("Sluttid"+i).innerHTML = Sluttid;
